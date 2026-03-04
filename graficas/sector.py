@@ -72,7 +72,6 @@ def grafica_sector(df, clasificacion, nivel, region)
     )
 
     df_melted = df_melted.sort_values("Fecha_postulacion")
-    df_melted["Fecha_postulacion"] = df_melted["Fecha_postulacion"].astype(str)
 
     # ==============================
     # FIGURA (DEFAULT TOTAL)
@@ -89,10 +88,11 @@ def grafica_sector(df, clasificacion, nivel, region)
         title=titulo,
         color_discrete_map=colores,
         category_orders={
-            columna_sector: orden,
-            "Fecha_postulacion": sorted(df_melted["Fecha_postulacion"].unique())
+            columna_sector: orden
         },
         hover_data={"Porcentaje": ":.1f", "Cantidad": True}
     )
+    
+    fig.update_xaxes(type="category")
 
     return fig
