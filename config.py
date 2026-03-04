@@ -2,6 +2,13 @@
 # CONFIGURACIÓN GLOBAL
 # ==============================
 
+orden_nivel = [
+    'Carrera Profesional',
+    'Segunda Especialidad',
+    'Maestría',
+    'Doctorado'
+]
+
 orden_sectores = [
     'Ingenierías y Ciencias Aplicadas',
     'Ciencias de la Salud',
